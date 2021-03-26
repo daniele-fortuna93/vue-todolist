@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- Vuejs -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Vue js Todo list</title>
+  </head>
+  <body>
+    <h1>Todo List</h1>
+    <div id="todo-list">
+
+      <ul class="list" v-if="lista.length > 0">
+        <li v-for="(item, index) in lista" >{{ item }} <span class="list-delete" @click="removeItem(index)">X</span> </li>
+      </ul>
+
+      <div class="add_item">
+        <input @keydown.enter="addItem" type="text" v-model="itemInput" placeholder="Inserisci nuovo elemento" name="" value="">
+        <button class="btn" @click="addItem" type="button" name="button">Aggiungi</button>
+        <button class="btn" @click="removeLastItem" type="button" name="button">Rimuovi</button>
+      </div>
+
+    </div>
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
